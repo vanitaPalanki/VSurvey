@@ -1,0 +1,40 @@
+
+
+
+{% extends 'Base.html' %}
+{% load static %}
+{% block title %} Surveyor {% endblock title %}
+
+{% block body %}
+<div id="contents">
+		<div class="features">
+			<form method="post" action="/login">
+            {% csrf_token %}
+                <div class="container" style="padding:16px; background-color: white;">
+                    <h1>Login</h1>
+                    <div>
+                    {% for message in messages %}
+                        <h3> {{message}} </h3>
+                    {% endfor %}
+                    </div>
+                    <hr>
+                    
+                    <label for="email"><b>Username</b></label>
+                    <input type="text" style="width: 100%; padding: 15px; margin: 5px 0 22px 0; display: inline-block; border: none; background: #f1f1f1;" placeholder="Enter Username" name="username" id="username" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" style="width: 100%; padding: 15px; margin: 5px 0 22px 0; display: inline-block; border: none; background: #f1f1f1;" placeholder="Enter Password" name="password" id="password" required>
+
+                    <button type="submit" class="registerbtn" style="background-color: #04AA6D; color: white; padding: 16px 20px; margin: 8px 0; border: none; cursor: pointer; width: 100%; opacity: 0.9;">Login</button>
+                </div>
+                
+                <div class="container signin">
+                    <p>Don't have an account? <a href="/signup" style="color: dodgerblue;">Sign up</a>.</p>
+                </div>
+            </form>
+			
+			
+		</div>
+	</div>
+  
+{% endblock body %}

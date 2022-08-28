@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} companysurvey {% endblock title %}
+{% block logout %}
+{% if user.is_authenticated %}
+    <li style="color:rgba(255,255,255,.55); padding: 8px;">Welcome {{user.first_name}}</li>
+    <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+     </li> 
+{% endif %}
+    
+{% endblock logout %}
+{% block body %} 
+
+    <div class="container-fluid">
+        <div id="raw" class="raw">
+            <div id="column1" class="col-md-2">
+                <div class="sidebar">
+                    <a class="active" href="/dashbord">Home</a>
+                    <a  href="/profile">Profile</a>
+                    <a  href="/product">Products</a>
+                    <a  href="surveystats">Survey Statistics</a>
+                </div>
+            </div>
+            <div id="column2" class="col-md-10"> 
+                <div class="content">   
+                    <h5>this is home page</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}

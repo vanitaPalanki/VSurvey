@@ -1,0 +1,108 @@
+    <!DOCTYPE html>
+{%load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css2/style.css' %}"/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>{% block title %}{% endblock title %}</title>
+  </head>
+  <body>
+  <div id="container"> 
+    <div id="main">
+      <!--Header starts-->
+      <header>
+        <div class="p-2"id="topheader">
+          <div class="container-fluid">
+            <div class="raw">
+              <div class="col-12">
+              <h4></h4>  
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="bottomheader">
+          <div class="container-fluid">
+            <nav class="navbar navbar-dark navbar-expand-lg" style="background-color:#13295a;">
+              
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="/">Home </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/usersurvey">User Survey </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/companysurvey">Company Survey</a>
+                </li> 
+                {% block logout %}{% endblock logout %}
+
+            </nav>
+          </div>
+        </div> 
+      </header>
+    <!--Header ends-->
+       {% block body %}{% endblock body %}
+    </div>
+  </div>
+
+
+ 
+
+
+
+ 
+<!--Footer starts-->
+  <div id="footer">
+    <div class="footer">
+      <div class="footer-content">
+        <div class="footer-section about"></div>
+        <div class="footer-section links"></div>
+        <div class="footer-section contact-form"></div>
+      </div>    
+      <div class="footer-bottom"> 
+        &copy; getsurvey.com | Designed by P VANITA
+      </div>
+    </div>
+  </div>
+<!--Footer ends-->
+ 
+     <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+    <script>
+      $( function(){
+        $( "#datepicker" ).datepicker();
+      } );
+    </script> 
+    <script type="text/javascript">
+   $(document).ready(function(){
+     //jquery for toggle sub menus
+     $('.sub-btn').click(function(){
+       $(this).next('.sub-menu').slideToggle();
+       $(this).find('.dropdown').toggleClass('rotate');
+     });
+
+     //jquery for expand and collapse the sidebar
+     $('.menu-btn').click(function(){
+       $('.side-bar').addClass('active');
+       $('.menu-btn').css("visibility", "hidden");
+     });
+
+     $('.close-btn').click(function(){
+       $('.side-bar').removeClass('active');
+       $('.menu-btn').css("visibility", "visible");
+     });
+   });
+   </script>
+  </body>
+</html>

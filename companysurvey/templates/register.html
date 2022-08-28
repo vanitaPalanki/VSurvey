@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block link %} 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css"> 
+{% endblock link %}
+{% block title %} User Register {% endblock title %}
+username
+{% block body %}
+ 
+    <main>
+        <div id="cs-container" class="container">
+            <div class="jumbotron">
+                <h3 class="display-4"><b>Welcome to User Survey</b></h3>
+                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            </div>
+        </div>
+        
+    </main>
+    <div id="signup-form" class="container mb-5">
+        <h2 class="alert-danger text-center p-3"><b>Register</b></h2>
+        <form action="/register" method="post" enctype="multipart/form-data" class="shadow p-5">
+            {% csrf_token %}
+            {% for fm in form %}
+            <div class="form-group mb-3">
+            {{fm.label_tag}} {{fm}} <small class="text-danger">{{fm.errors|striptags}}</small>
+            </div>
+            {% endfor %}
+            <input type="submit" value="Submit" class="btn btn-primary">
+            {% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                    <p class="alert alert-danger my-3">{{error}}</p>
+                {% endfor %}
+            {% endif %}
+        </form> 
+    </div>
+    
+        
+        
+        
+        <!--
+            
+        </div> 
+            
+            
+            
+       </div>      
+                
+                <div>
+                    {% for message in messages %}
+                    <h3> {{message}} </h3>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>-->
+
+       
+ 
+ {% endblock body %}
+ 
+ {% block script %} 
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#exampleInputPassword1" ).datepicker();
+        } );
+    </script>
+{% endblock script %}

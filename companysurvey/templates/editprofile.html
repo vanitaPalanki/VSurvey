@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %} companysurvey {% endblock title %}
+{% block logout %}
+{% if user.is_authenticated %}
+    <li style="color:rgba(255,255,255,.55); padding: 8px;">Welcome {{user.first_name}}</li>
+    <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+     </li> 
+{% endif %}
+    
+{% endblock logout %}
+{% block body %} 
+
+    <div class="container-fluid">
+        <div id="raw" class="raw">
+            <div id="column1" class="col-md-2">
+                <div class="sidebar">
+                    <a  href="/dashbord">Home</a>
+                    <a class="active" href="/profile">Profile</a>
+                    <a  href="/product">Products</a>
+                    <a  href="surveystats">Survey Statistics</a>
+                </div>
+            </div>
+            <div id="column2" class="col-md-10"> 
+                <div class="content">   
+                    <h2 class="alert-danger text-center p-3"><b>Edit Profile</b></h2>
+                    <form action="/editprofile" method="post" enctype="multipart/form-data" class="shadow p-5">
+                        {% csrf_token %}
+                        {% for fm in form1 %}
+                        <div class="form-group mb-3">
+                        {{fm.label_tag}} {{fm}} <small class="text-danger">{{fm.errors|striptags}}</small>
+                        </div>
+                        {% endfor %}
+                        <input type="submit" value="Submit" class="btn btn-primary">
+                        {% if form1.non_field_errors %}
+                            {% for error in form1.non_field_errors %}
+                                <p class="alert alert-danger my-3">{{error}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    </form> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}

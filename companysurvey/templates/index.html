@@ -1,0 +1,44 @@
+{% extends 'Base.html' %}
+{% load static %}
+{% block title %} Home {% endblock title %}
+
+{% block body %}
+
+	<div id="adbox" >
+		<div class="clearfix">
+			<img src="{% static 'images/box.jpg' %}" alt="Img" height="200">
+			<div>
+				<h1>vSurvey</h1>
+				<h2>who we are?</h2>
+				<p>
+					vSurvey is the middle-man between company and end user for their product survey.
+					
+				</p>
+			</div>
+		</div>
+	</div>
+	<div id="contents">
+		<div class="features">
+			<div>
+				<img src="{% static 'images/product2.jpg' %}" alt="Img" height="300" style="padding-right:35px;">
+				<h1 style="color: #2c2c2c;font-size: 50px;line-height: 60px;margin: 0; padding-bottom:5px; text-transform: uppercase;">Surveyor</h1>
+				<h2>VSURVEY welcomes you...!</h2>
+				<p>Join us now and get the best survey for your products.</p>
+				<p>You brought your product to us and we will provide you the best survey.We give best service as survey for your products with true user feedback.</p>
+				<a href="/surveyor" class="btn">Join now</a>
+			</div>
+			<div>
+				<img src="{% static 'images/survey.jpg' %}" alt="Img" height="300" style="padding-right:35px;">
+				<h1 style="color: #2c2c2c;font-size: 50px;line-height: 60px;margin: 0; padding-bottom:5px; text-transform: uppercase;">Surveyee</h1>
+				
+				<p>Hey user get bored of your daily rutined life, would you like to try something new. Then try Surveyee.  </p>
+				<p>Just three steps and few minutes that it. That all what you need to earn exciting reward.</p>
+				<p>Register now, Gives us your genuien feedback on our product, and earn exciting rewards.</p>
+				<a href="/surveyor" class="btn">Try now!</a>
+			</div>
+		<div>
+	</div>
+		
+	
+{% endblock body %}
+

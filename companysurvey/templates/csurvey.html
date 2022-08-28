@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} companysurvey {% endblock title %}
+
+{% block body %} 
+
+    <main>
+        <div id="cs-jumbotron" class="container-fluid">
+            <div class="jumbotron">
+                <h3 class="display-4"><b>Welcome to CS</b></h3>
+                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+                
+                <a class="btn btn-primary" href="/signup" role="button">Sign up</a>
+                <a class="btn btn-primary" href="/login" role="button">Login</a>
+                
+            </div>
+        </div>
+   </main>
+
+    <div class="container">
+        {% for message in messages %}
+        <h3> {{message}} </h3>
+        {% endfor %}
+    </div>   
+{% endblock body %}
+
+
+
+ 

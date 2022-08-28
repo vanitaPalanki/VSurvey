@@ -1,0 +1,50 @@
+{% extends 'Base.html' %}
+{% load static %}
+{% block title %} Surveyor {% endblock title %}
+
+{% block body %}
+
+<div id="adbox" >
+	<div class="clearfix">
+		<img src="{% static 'images/product2.jpg' %}" alt="Img" height="400" style="padding-bottom:20px;">
+	<div>
+			<h1 style="padding-bottom:10px;">Surveyor</h1>
+			<h2 style="padding-bottom:10px;">Welcom to VSURVEY</h2>
+			<p>Join us now and get the best survey for your products.</p>
+			<p style="padding-bottom:20px;">You brought your product to us and we will provide you the best survey.We give best service as survey for your products with true user feedback.</p>
+				
+			<a href="/signup" class="more">Sign Up</a>
+			<a href="/login" class="more">Login</a>
+		</div>
+	</div>
+</div>
+<div id="contents">
+		<div id="tagline" class="clearfix">
+			<h1 style="padding-top:60px;">Our services</h1>
+			<div>
+				<p>
+					You can list your products here for survey.
+				</p>
+				<p>
+					We give best service as survey for your products with true user feedback.
+				</p>
+				<p>
+					The survey reports and info-graphics are generated automatically. The statistics of your product related information can we accessed from your account.
+				</p>
+			</div>
+			<div>
+				<p>
+					You can add and delete as many as products in your company product list. You can manage these listed products from your account.
+				</p>
+				<p>
+					You can apply filters for each product so that the users have a choice to survey the product from their choice.
+				</p>
+				<p>
+					The survey and the information regarding the products are stored very securely.
+				</p>
+			</div>
+		</div>
+	</div>
+			
+  
+{% endblock body %}
